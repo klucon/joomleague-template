@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<field name="network" type="list" label="TPL_JOOMLEAGUE_FIELD_SOCIAL_NETWORK">
+		<option value="facebook">Facebook</option>
+		<option value="instagram">Instagram</option>
+		<option value="youtube">YouTube</option>
+		<option value="x">X</option>
+		<option value="linkedin">LinkedIn</option>
+		<option value="website">TPL_JOOMLEAGUE_SOCIAL_WEBSITE</option>
+	</field>
+	<field name="url" type="url" filter="url" label="TPL_JOOMLEAGUE_FIELD_SOCIAL_URL" required="true" />
+</form>

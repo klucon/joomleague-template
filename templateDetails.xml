@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="template" version="4.0" client="site" method="upgrade">
+	<name>joomleague</name><creationDate>2026-09</creationDate><author>Ondřej Klučka (https://joomleague.eu)</author><copyright>(C) 2026 Ondřej Klučka.</copyright><license>GNU General Public License version 2 or later</license><version>0.1.4-dev</version><description>TPL_JOOMLEAGUE_XML_DESCRIPTION</description>
+	<files><folder>css</folder><folder>forms</folder><folder>html</folder><folder>images</folder><folder>js</folder><folder>language</folder><filename>component.php</filename><filename>error.php</filename><filename>index.php</filename><filename>templateDetails.xml</filename></files>
+	<languages folder="language"><language tag="en-GB">en-GB/tpl_joomleague.ini</language><language tag="en-GB">en-GB/tpl_joomleague.sys.ini</language><language tag="cs-CZ">cs-CZ/tpl_joomleague.ini</language><language tag="cs-CZ">cs-CZ/tpl_joomleague.sys.ini</language></languages>
+	<positions><position>utility-links</position><position>search</position><position>menu</position><position>competition-nav</position><position>programme-ticker</position><position>hero-event</position><position>breadcrumbs</position><position>news-lead</position><position>league-main</position><position>calendar-main</position><position>league-side</position><position>rankings</position><position>club-showcase</position><position>venue-programme</position><position>discover</position><position>mail</position><position>footer-a</position><position>footer-b</position><position>footer-c</position></positions>
+	<config><fields name="params">
+		<fieldset name="brand" label="TPL_JOOMLEAGUE_TAB_BRAND">
+			<field name="brand_name" type="text" label="TPL_JOOMLEAGUE_FIELD_BRAND_NAME" />
+			<field name="brand_sport" type="text" label="TPL_JOOMLEAGUE_FIELD_BRAND_SPORT" />
+			<field name="brand_logo" type="media" label="TPL_JOOMLEAGUE_FIELD_BRAND_LOGO" types="images" preview="tooltip" />
+			<field name="brand_icon" type="list" default="trophy" label="TPL_JOOMLEAGUE_FIELD_BRAND_ICON"><option value="football">TPL_JOOMLEAGUE_ICON_FOOTBALL</option><option value="basketball">TPL_JOOMLEAGUE_ICON_BASKETBALL</option><option value="hockey">TPL_JOOMLEAGUE_ICON_HOCKEY</option><option value="trophy">TPL_JOOMLEAGUE_ICON_TROPHY</option></field>
+			<field name="favicon" type="media" label="TPL_JOOMLEAGUE_FIELD_FAVICON" types="images" preview="tooltip" />
+		</fieldset>
+		<fieldset name="colours" label="TPL_JOOMLEAGUE_TAB_COLOURS">
+			<field name="colour_primary" type="color" default="#22a85a" label="TPL_JOOMLEAGUE_FIELD_COLOUR_PRIMARY" />
+			<field name="colour_primary_dark" type="color" default="#12683a" label="TPL_JOOMLEAGUE_FIELD_COLOUR_PRIMARY_DARK" />
+			<field name="colour_accent" type="color" default="#d5f04d" label="TPL_JOOMLEAGUE_FIELD_COLOUR_ACCENT" />
+			<field name="colour_dark" type="color" default="#07130e" label="TPL_JOOMLEAGUE_FIELD_COLOUR_DARK" />
+			<field name="colour_surface" type="color" default="#f3f6f4" label="TPL_JOOMLEAGUE_FIELD_COLOUR_SURFACE" />
+			<field name="colour_text" type="color" default="#15241c" label="TPL_JOOMLEAGUE_FIELD_COLOUR_TEXT" />
+		</fieldset>
+		<fieldset name="hero" label="TPL_JOOMLEAGUE_TAB_HERO">
+			<field name="show_hero" type="radio" default="1" label="TPL_JOOMLEAGUE_FIELD_SHOW_HERO" layout="joomla.form.field.radio.switcher"><option value="0">JNO</option><option value="1">JYES</option></field>
+			<field name="hero_image" type="media" label="TPL_JOOMLEAGUE_FIELD_HERO_IMAGE" types="images" preview="tooltip" showon="show_hero:1" />
+			<field name="hero_kicker" type="text" label="TPL_JOOMLEAGUE_FIELD_HERO_KICKER" showon="show_hero:1" />
+			<field name="hero_title" type="text" label="TPL_JOOMLEAGUE_FIELD_HERO_TITLE" showon="show_hero:1" />
+			<field name="hero_copy" type="textarea" rows="4" filter="safehtml" label="TPL_JOOMLEAGUE_FIELD_HERO_COPY" showon="show_hero:1" />
+			<field name="hero_primary_label" type="text" label="TPL_JOOMLEAGUE_FIELD_PRIMARY_LABEL" showon="show_hero:1" />
+			<field name="hero_primary_item" type="menuitem" client_id="0" label="TPL_JOOMLEAGUE_FIELD_PRIMARY_ITEM" showon="show_hero:1" />
+			<field name="hero_secondary_label" type="text" label="TPL_JOOMLEAGUE_FIELD_SECONDARY_LABEL" showon="show_hero:1" />
+			<field name="hero_secondary_item" type="menuitem" client_id="0" label="TPL_JOOMLEAGUE_FIELD_SECONDARY_ITEM" showon="show_hero:1" />
+		</fieldset>
+		<fieldset name="layout" label="TPL_JOOMLEAGUE_TAB_LAYOUT">
+			<field name="content_width" type="list" default="1320" label="TPL_JOOMLEAGUE_FIELD_CONTENT_WIDTH">
+				<option value="960">TPL_JOOMLEAGUE_WIDTH_960</option>
+				<option value="1140">TPL_JOOMLEAGUE_WIDTH_1140</option>
+				<option value="1200">TPL_JOOMLEAGUE_WIDTH_1200</option>
+				<option value="1320">TPL_JOOMLEAGUE_WIDTH_1320</option>
+				<option value="1440">TPL_JOOMLEAGUE_WIDTH_1440</option>
+				<option value="1600">TPL_JOOMLEAGUE_WIDTH_1600</option>
+				<option value="1920">TPL_JOOMLEAGUE_WIDTH_1920</option>
+			</field>
+			<field name="show_utility" type="radio" default="1" label="TPL_JOOMLEAGUE_FIELD_SHOW_UTILITY" layout="joomla.form.field.radio.switcher"><option value="0">JNO</option><option value="1">JYES</option></field>
+			<field name="show_competition_nav" type="radio" default="1" label="TPL_JOOMLEAGUE_FIELD_SHOW_COMPETITION_NAV" layout="joomla.form.field.radio.switcher"><option value="0">JNO</option><option value="1">JYES</option></field>
+			<field name="show_ticker" type="radio" default="1" label="TPL_JOOMLEAGUE_FIELD_SHOW_TICKER" layout="joomla.form.field.radio.switcher"><option value="0">JNO</option><option value="1">JYES</option></field>
+			<field name="show_breadcrumbs" type="radio" default="1" label="TPL_JOOMLEAGUE_FIELD_SHOW_BREADCRUMBS" layout="joomla.form.field.radio.switcher"><option value="0">JNO</option><option value="1">JYES</option></field>
+			<field name="show_mail" type="radio" default="1" label="TPL_JOOMLEAGUE_FIELD_SHOW_MAIL" layout="joomla.form.field.radio.switcher"><option value="0">JNO</option><option value="1">JYES</option></field>
+			<field name="show_footer" type="radio" default="1" label="TPL_JOOMLEAGUE_FIELD_SHOW_FOOTER" layout="joomla.form.field.radio.switcher"><option value="0">JNO</option><option value="1">JYES</option></field>
+		</fieldset>
+		<fieldset name="navigation" label="TPL_JOOMLEAGUE_TAB_NAVIGATION">
+			<field name="home_item" type="menuitem" client_id="0" label="TPL_JOOMLEAGUE_FIELD_HOME_ITEM" />
+			<field name="table_item" type="menuitem" client_id="0" label="TPL_JOOMLEAGUE_FIELD_TABLE_ITEM" />
+		</fieldset>
+		<fieldset name="social" label="TPL_JOOMLEAGUE_TAB_SOCIAL">
+			<field name="social_links" type="subform" formsource="/templates/joomleague/forms/social.xml" multiple="true" layout="joomla.form.field.subform.repeatable-table" label="TPL_JOOMLEAGUE_FIELD_SOCIAL_LINKS" />
+		</fieldset>
+		<fieldset name="footer" label="TPL_JOOMLEAGUE_TAB_FOOTER">
+			<field name="footer_brand" type="text" label="TPL_JOOMLEAGUE_FIELD_FOOTER_BRAND" />
+			<field name="footer_copy" type="textarea" rows="4" filter="safehtml" label="TPL_JOOMLEAGUE_FIELD_FOOTER_COPY" />
+			<field name="footer_bottom" type="text" label="TPL_JOOMLEAGUE_FIELD_FOOTER_BOTTOM" />
+			<field name="footer_link_label" type="text" default="joomleague.eu" label="TPL_JOOMLEAGUE_FIELD_FOOTER_LINK_LABEL" />
+			<field name="footer_link_url" type="url" default="https://joomleague.eu" filter="url" label="TPL_JOOMLEAGUE_FIELD_FOOTER_LINK_URL" />
+		</fieldset>
+	</fields></config>
+</extension>
